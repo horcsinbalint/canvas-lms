@@ -16,3 +16,11 @@ services:
       VIRTUAL_HOST: pgweb.canvas.docker
     links:
       - postgres
+    networks:
+      canvas_network:
+        ipv4_address: 172.16.1.9
+
+networks:
+  canvas_network:
+    external: true
+    name: canvas_network

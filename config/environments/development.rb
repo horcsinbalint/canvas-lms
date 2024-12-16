@@ -84,6 +84,8 @@ Rails.application.configure do
   # allow docker dev setup to use http proxy
   config.hosts << ENV["VIRTUAL_HOST"] if ENV["VIRTUAL_HOST"]
 
+  config.hosts << "web.canvas.local"
+
   # allow any additional hosts
   ENV["ADDITIONAL_ALLOWED_HOSTS"]&.split(",")&.each do |host|
     config.hosts << host
